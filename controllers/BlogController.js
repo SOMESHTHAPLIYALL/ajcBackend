@@ -36,6 +36,24 @@ exports.getBlogs = async (req, res) => {
   }
 };
 
+exports.getSingleBlog = async (req, res) => {
+  try {
+    const { id } = req.body;
+    const blog = await BlogModel.findById(id);
+    return res.status(200).send({
+      message: "Blog",
+      success: true,
+      blog,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      message: "Internal server error",
+      success: false,
+    });
+  }
+};
+
 exports.deleteBlog = async (req, res) => {
   try {
     const { id } = req.body;
