@@ -4,7 +4,7 @@ exports.createEnquiry = async (req, res) => {
   try {
     const { name, email, query, date } = req.body;
 
-    const newquery = new BlogModel({ name, email, query, date });
+    const newquery = new Enquiry({ name, email, query, date });
     await newquery.save();
     return res.status(200).send({
       message: "Created a new query",
