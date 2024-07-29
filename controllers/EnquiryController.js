@@ -15,6 +15,7 @@ exports.createEnquiry = async (req, res) => {
     return res.status(500).send({
       message: "Internal server error",
       success: false,
+      error,
     });
   }
 };
@@ -32,6 +33,7 @@ exports.getEnquiries = async (req, res) => {
     return res.status(500).send({
       message: "Internal server error",
       success: false,
+      error,
     });
   }
 };
@@ -66,6 +68,7 @@ exports.deleteEnquiry = async (req, res) => {
     return res.status(500).send({
       message: "Internal server error",
       success: false,
+      error,
     });
   }
 };
