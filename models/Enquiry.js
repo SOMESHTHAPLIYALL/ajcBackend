@@ -13,6 +13,9 @@ const enquirySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  date: {
+    type: Date,
+  },
 });
 
 const Enquiry = mongoose.model("Enquiry", enquirySchema);
